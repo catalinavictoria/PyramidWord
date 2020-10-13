@@ -3,7 +3,7 @@ from collections import Counter
 def is_pyramid_word(text: str) -> bool:
     """
     This method tests if a word is pyramid word. A word is pyramid when the letters can be arrange in increasing frequency.
-    :param text: a string
+    :param text: a single word 
     :return: 
     """
     #check input for string
@@ -11,6 +11,8 @@ def is_pyramid_word(text: str) -> bool:
         return False
     #eliminate whitespaces, tabs and new lines
     text = text.translate(str.maketrans('', '', ' \n\t\r'))
+    # conver to lowercase
+    text = text.lower()
     #check for empty string
     if len(text) == 0:
         return False

@@ -31,7 +31,16 @@ class TestPyramid(unittest.TestCase):
         text = 1
         result = is_pyramid_word(text)
         self.assertFalse(result)
-        
+
+    def test_pyramid_word_valid_capitalize_text_is_true(self):
+        text = "Banana"
+        result = is_pyramid_word(text)
+        self.assertTrue(result)
+    
+    def test_pyramid_word_invalid_capitalize_text_is_false(self):
+        text = "Felicidad"
+        result = is_pyramid_word(text)
+        self.assertFalse(result)
 
 if __name__ == '__main__':
     unittest.main()
