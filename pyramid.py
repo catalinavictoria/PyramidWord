@@ -29,3 +29,4 @@ def is_pyramid_word(text: str) -> bool:
         if num - i != 1:
             return False
     return True
+    
