@@ -5,10 +5,22 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def form():
+    """
+    This method renders the form.html template, where the user enters the expected word.
+    :param: none
+    :return: a rendered HTML file.
+    """
     return render_template('form.html')
 
 @app.route('/pyramid_word', methods=['GET', 'POST'])
 def pyramid_word():
+    """
+    This is a POST method that retreives the information from the HTML input element.
+    It takes the user input calls the is_pyramid_word method to test if the word is pyramid or not.
+    After rendering the result.html template, it displays a message indicating if the entered word is pyramid or not.
+    :param: none
+    :return: a rendered HTML file, containing a display message.
+    """
     # take user input
     user_input = request.form['word']
     # check for pyramid

@@ -2,6 +2,12 @@ import unittest
 from pyramid import is_pyramid_word
 
 class TestPyramid(unittest.TestCase):
+    """
+    This class contains unit tests for several cases. 
+    These unit tests check for the expected response given a particular input.
+    For all test cases:
+    :param self: instance of the TestPyramid class
+    """
     def test_pyramid_empty_text_is_false(self):
         text = ""
         result = is_pyramid_word(text)
