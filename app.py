@@ -3,7 +3,7 @@ from pyramid import is_pyramid_word
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def form():
     """
     This method renders the form.html template, where the user enters the expected word.
@@ -12,7 +12,7 @@ def form():
     """
     return render_template('form.html')
 
-@app.route('/pyramid_word', methods=['GET', 'POST'])
+@app.route('/pyramid_word', methods=['POST'])
 def pyramid_word():
     """
     This is a POST method that retreives the information from the HTML input element.
@@ -30,5 +30,5 @@ def pyramid_word():
         msg = "Not a pyramid word :("
     return render_template('result.html', msg=msg)
 
-if __name__=="__main_":
+if __name__=="__main__":
     app.run()
